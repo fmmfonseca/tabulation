@@ -1,0 +1,27 @@
+= Description
+
+A two-dimensional, mutable table of values, with a fluid API.
+
+= Example(s)
+
+  t = Tabulation.new
+  t.rows << [1, 2]
+  t.rows << [4]
+  t.columns << [3, 5]
+
+  t.rows.count #=> 2
+  t.columns.count #=> 3  
+
+  t.cell(0, 0).value #=> 1
+  t.row(0).column(1).value #=> 2
+  t.column(0).row(1).value #=> 4
+  t.cell(1, 1).value #=> nil  
+
+  t.rows.each { |row| ... }
+  t.columns.each { |column| ... }
+  t.row(0).columns.each { |cell| ... }
+  t.column(0).rows.each { |cell| ... }
+
+= License
+
+Released under the MIT license.
